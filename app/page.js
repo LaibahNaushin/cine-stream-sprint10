@@ -1,95 +1,55 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { useSelector } from "react-redux";
+import Navbar from "../components/Navbar";
+import FilterSidebar from "../components/FilterSidebar";
+import MovieGrid from "../components/MovieGrid";
+import { movies } from "../lib/movies";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const theme = useSelector((state) => state.theme.mode);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return (
+    <main className={`app-shell ${theme}`}>
+      <Navbar />
+
+      <section className="hero-section">
+        <div className="hero-content">
+          <span className="hero-label">CINE-STREAM · DATA STORM</span>
+
+          <h1>
+            Discover stories
+            <br />
+            worth watching.
+          </h1>
+
+          <p>
+            Explore a curated collection of movies with powerful global
+            filtering, favorites, and personalized viewing controls.
+          </p>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="catalog-section">
+        <div className="section-heading">
+          <div>
+            <span className="section-label">MOVIE LIBRARY</span>
+            <h2>Explore Movies</h2>
+          </div>
+
+          <span className="movie-count">
+            {movies.length} titles
+          </span>
+        </div>
+
+        <div className="catalog-layout">
+          <FilterSidebar />
+
+          <div className="catalog-results">
+            <MovieGrid movies={movies} />
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
