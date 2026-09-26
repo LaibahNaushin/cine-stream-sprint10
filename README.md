@@ -65,4 +65,8 @@ redux/
 └── slices/
     ├── favoritesSlice.js
     ├── filterSlice.js
+<<<<<<< HEAD
     └── themeSlice.js
+=======
+    └── themeSlice.js
+>>>>>>> 33063c91bb43063a30b26dd792f05a5c11f069c4
