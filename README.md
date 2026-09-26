@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Cine-Stream — Sprint 10
 
-## Getting Started
+A modern movie discovery web application built with **Next.js, React, and Redux Toolkit**.
 
-First, run the development server:
+Cine-Stream Sprint 10 focuses on advanced frontend state management using Redux Toolkit, global movie filters, favorites management, theme switching, and React performance optimization.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Live Project
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🔗 **GitHub Repository:**  
+https://github.com/LaibahNaushin/cine-stream-sprint10
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📌 Project Overview
 
-To learn more about Next.js, take a look at the following resources:
+Cine-Stream is a movie discovery platform where users can browse movies, search and filter the movie collection, manage their favorite movies, and switch between dark and light themes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This Sprint 10 implementation focuses on migrating application-level state into **Redux Toolkit** and creating a scalable global state architecture.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ✨ Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🎬 Movie discovery interface
+- 🔎 Global movie search
+- 🎭 Genre filtering
+- ⭐ Minimum rating filtering
+- 📊 Movie sorting
+- ❤️ Add/remove favorite movies
+- 📌 Dedicated Favorites page
+- 🌙 Dark/Light theme toggle
+- 💾 Redux state persistence using Local Storage
+- ⚡ `useMemo` optimization for movie filtering
+- ⚡ `useCallback` optimization for favorite actions
+- 📱 Responsive design
+- 🧩 Reusable React components
+- 🗂️ Global state management with Redux Toolkit
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Next.js 15 | React framework |
+| React | UI development |
+| Redux Toolkit | Global state management |
+| React Redux | Connecting React with Redux |
+| JavaScript | Application logic |
+| CSS | Styling and responsive UI |
+| Local Storage | State persistence |
+| Git & GitHub | Version control |
+
+---
+
+## 🧠 Redux Architecture
+
+The application uses Redux Toolkit with separate slices for different global states.
+
+```text
+redux/
+├── store.js
+└── slices/
+    ├── favoritesSlice.js
+    ├── filterSlice.js
+    └── themeSlice.js
